@@ -10,6 +10,7 @@
 				<field name="name"/>
 				<field name="phone"/>
 				<field name="credit"/>
+				<field name="first_unpaid_invoice"/>
 			</tree>
 		</field>
 	</record>
