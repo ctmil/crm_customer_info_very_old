@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+	<record id="customer_balance_tree" model="ir.ui.view">
+		<field name="name">Saldos Clientes</field>
+		<field name="model">res.partner</field>
+		<field name="arch" type="xml">
+			<tree>
+				<field name="name"/>
+				<field name="phone"/>
+				<field name="credit"/>
+			</tree>
+		</field>
+	</record>
+
+	<act_window id="action_customer_balances"
+		name="Saldos Clientes"
+		res_model="res.partner"
+		view_mode="tree,form"
+                view_id="customer_balance_tree"
+		target="current"
+		domain="[('customer','=',True),('parent_id','=',None),('credit','>',0)]"
+		 />
+
+	<menuitem id="customer_balances_menu"
+		name="Saldos Clientes"
+		parent="account.menu_finance_receivables"
+		sequence="100"
+		action="action_customer_balances" />
+
+    </data>
+</openerp>
