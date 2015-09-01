@@ -52,6 +52,7 @@ class res_partner(models.Model):
 			else:
 				date_object = datetime.strptime(sale_order.date_order,'%Y-%m-%d %H:%M:%S')
 				last_date_object = datetime.strptime(last_date_order,'%Y-%m-%d %H:%M:%S')
+				last_date_order = sale_order.date_order
 				days = days + (date_object - last_date_object).days	
 			index += 1
 		if index > 0:
